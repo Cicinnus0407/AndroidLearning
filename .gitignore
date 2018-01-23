@@ -16,3 +16,4 @@ app/libs/
 app/src/androidTest/
 app/src/test/
 gradle/
+.idea/vcs.xml

@@ -37,6 +37,16 @@ public class BinderPool {
     }
 
 
+
+
+    private BinderPool(Context context) {
+        mContext = context.getApplicationContext();
+
+
+        connectBinderPoolService();
+
+    }
+
     private IBinder.DeathRecipient recipient = new IBinder.DeathRecipient() {
         @Override
         public void binderDied() {
@@ -49,16 +59,6 @@ public class BinderPool {
             }
         }
     };
-
-
-    private BinderPool(Context context) {
-        mContext = context.getApplicationContext();
-
-
-        connectBinderPoolService();
-
-    }
-
 
     private void connectBinderPoolService() {
         countDownLatch = new CountDownLatch(1);
