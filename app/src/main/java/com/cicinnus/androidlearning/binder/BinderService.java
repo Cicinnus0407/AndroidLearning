@@ -45,18 +45,12 @@ public class BinderService extends Service {
         public void registerListener(INewBookArrivedListener listener) throws RemoteException {
             //添加到注册的集合
             listenerList.register(listener);
-//            if (!listenerList.contains(listener)) {
-//                listenerList.add(listener);
-//            }
             Log.d(TAG, "registerListener: "+"注册了监听");
         }
 
         @Override
         public void unRegisterListener(INewBookArrivedListener listener) throws RemoteException {
             //移除注册集合
-//            if (listenerList.contains(listener)) {
-//                listenerList.remove(listener);
-//            }
             listenerList.unregister(listener);
             if (listenerList.beginBroadcast()==0) {
                 stopSelf();
@@ -110,15 +104,7 @@ public class BinderService extends Service {
      */
     private void onNewBookArrived(Book book) {
 
-//        if (listenerList.size() > 0) {
-//            for (INewBookArrivedListener listener : listenerList) {
-//                try {
-//                    listener.OnNewBookArrived(book);
-//                } catch (RemoteException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        }
+
         int N = listenerList.beginBroadcast();
         for (int i = 0; i < N; i++) {
             INewBookArrivedListener listener = listenerList.getBroadcastItem(i);

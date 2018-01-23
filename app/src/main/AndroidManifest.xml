@@ -20,14 +20,17 @@
             />
 
         <activity android:name=".binder.BinderActivity">
+
+        </activity>
+        <activity android:name=".messenger.MessengerTest" >
+
+        </activity>
+        <activity android:name=".binderpool.BinderPoolActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".messenger.MessengerTest" >
-
         </activity>
 
         <service android:name=".binder.BinderService"
@@ -35,6 +38,9 @@
             />
         <service android:name=".messenger.MessengerService"
             android:process=":remoteService"
+            />
+        <service android:name=".binderpool.BinderPoolService"
+            android:process=":remote"
             />
     </application>
 
