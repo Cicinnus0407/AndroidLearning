@@ -52,5 +52,8 @@ public class MessengerService extends Service{
         return messenger.getBinder();
     }
 
-
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        return super.onStartCommand(intent, flags, startId);
+    }
 }

@@ -6,8 +6,4 @@ package com.cicinnus.androidlearning.binder;
  */
 
 public interface Test {
-
-    public abstract class Test2{
-
-    }
 }

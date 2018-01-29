@@ -26,6 +26,15 @@
 
         </activity>
         <activity android:name=".binderpool.BinderPoolActivity" >
+
+        </activity>
+
+        <!--可拖动的view-->
+        <activity android:name=".view.DragViewActivity" >
+
+        </activity>
+        <!--serviceActivity-->
+        <activity android:name=".service.ServiceActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -42,6 +51,8 @@
         <service android:name=".binderpool.BinderPoolService"
             android:process=":remote"
             />
+        <service android:name=".service.StartService" />
+        <service android:name=".service.BindService" />
     </application>
 
 </manifest>

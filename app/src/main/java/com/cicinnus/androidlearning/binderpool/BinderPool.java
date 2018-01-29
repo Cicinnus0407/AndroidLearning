@@ -65,6 +65,7 @@ public class BinderPool {
         Intent intent = new Intent(mContext, BinderPoolService.class);
         mContext.bindService(intent, conn, Context.BIND_AUTO_CREATE);
         try {
+            //等待结束
             countDownLatch.await();
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -83,7 +84,6 @@ public class BinderPool {
             } catch (RemoteException e) {
                 e.printStackTrace();
             }
-            //等待结束
             countDownLatch.countDown();
 
         }
